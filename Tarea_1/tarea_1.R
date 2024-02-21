@@ -1,5 +1,5 @@
 ####Tarea exploracion de datos - uso de Estadistica descriptiva
-#### Oma Mercado Díaz - Métodos Estocásticos
+#### Omar Mercado Díaz - Métodos Estocásticos
 install.packages("readxl")
 install.packages("moments")
 
