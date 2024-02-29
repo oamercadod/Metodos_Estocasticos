@@ -24,7 +24,8 @@ varianza_K
 #Resultados ejercicio 1
 cat("La media de k es:", media_K, "\n")
 cat("La varianza de k es:", varianza_K, "\n")
-
+#La media de k es: 15.64263 
+#La varianza de k es: 851.9412 
 ##################################################################
 # Ejercicio 2. La conductividad hidráulica para un acuífero tiene una distribución lognormal 
 #con media 10 m/d y varianza 200 m2/d2. ¿Cuál es la probabilidad de que en 
@@ -43,6 +44,8 @@ Porcentaje_30 <-round(probabilidad_30*100, digits = 1)
 #Resultados ejercicio 2
 cat("La probabilidad de que la conductividad en una ubicacion no observada
     sea mayor a 30 m/d es:", probabilidad_30, "o un porcentaje de:", Porcentaje_30, "%")
+#La probabilidad de que la conductividad en una ubicacion no observada
+#sea mayor a 30 m/d es: 0.4690399 o un porcentaje de: 46.9 %
 
 ###############################################################
 #Ejercicio 3. Basado en un análisis geológico, se obtuvieron las siguientes
@@ -77,6 +80,15 @@ cat("La distribucion de probabilidad total de la conductividad para el acuifero 
     "Probabilidad de una Conductividad de 2*10^1 m/d :", prob_total[6],"\n",
     "Probabilidad de una Conductividad de 5*10^1 m/d :", prob_total[7],"\n",
     "Probabilidad de una Conductividad de 1*10^2 m/d :", prob_total[8],"\n")
+#La distribucion de probabilidad total de la conductividad para el acuifero es: 
+#Probabilidad de una Conductividad de 1*10^-3 m/d: 0.07 
+#Probabilidad de una Conductividad de 1*10^-2 m/d: 0.11 
+#Probabilidad de una Conductividad de 1*10^-1 m/d: 0.07 
+#Probabilidad de una Conductividad de 1*10^0 m/d : 0.11 
+#Probabilidad de una Conductividad de 1*10^1 m/d : 0.29 
+#Probabilidad de una Conductividad de 2*10^1 m/d : 0.21 
+#Probabilidad de una Conductividad de 5*10^1 m/d : 0.07 
+#Probabilidad de una Conductividad de 1*10^2 m/d : 0.07
 
 ###############################################################
 #Ejercicio 4.Considerar dos variables aleatorias Z1 y Z2 con media 10 y 25
@@ -106,7 +118,11 @@ var_Y <- var_Z1 + var_Z2 + 2 * cov_Z1_Z2
 cat("La Covarianza entre Z1 y Z2 es:", cov_Z1_Z2, "\n")
 cat("El Valor esperado de Y = Z1 + Z2 es:", E_Y, "\n")
 cat("La Varianza de Y = Z1 + Z2 es:", var_Y, "\n")
+#La Covarianza entre Z1 y Z2 es: 257.1964 
+#El Valor esperado de Y = Z1 + Z2 es: 35 
+#La Varianza de Y = Z1 + Z2 es: 1264.393 
 
+#############################################################
 #Ejercicio 5. 
 
 mu_Z1 <- 10
@@ -122,26 +138,26 @@ rho_matrix <- matrix(c(sigma_Z1^2, cov_Z1_Z2, cov_Z1_Z2, sigma_Z2^2), nrow = 2)
 
 # Pr[Z1 < 30]
 prob_Z1_lt_30 <- pmvnorm(mean = c(mu_Z1, mu_Z2), sigma = rho_matrix, lower = c(-Inf, -Inf), upper = c(30, Inf))
-
 # Pr[Z2 < 40]
 prob_Z2_lt_40 <- pmvnorm(mean = c(mu_Z1, mu_Z2), sigma = rho_matrix, lower = c(-Inf, -Inf), upper = c(Inf, 40))
-
 # Pr[Z1 + Z2 < 50]
 prob_Z1_Z2_lt_50 <- pmvnorm(mean = c(mu_Z1, mu_Z2), sigma = rho_matrix, lower = c(-Inf, -Inf), upper = c(50, 50))
-
 # Pr[Z1 < 30 ∩ Z2 < 40]
 prob_Z1_lt_30_Z2_lt_40 <- pmvnorm(mean = c(mu_Z1, mu_Z2), sigma = rho_matrix, lower = c(-Inf, -Inf), upper = c(30, 40))
-
 # Pr[Z1 < 30 ∪ Z2 < 40]
 prob_Z1_lt_30_union_Z2_lt_40 <- prob_Z1_lt_30 + prob_Z2_lt_40 - prob_Z1_lt_30_Z2_lt_40
 
-# Resultados
-
+# Resultados ejercicio 5
 cat("La Probabilidad [Z1 < 30] es:", prob_Z1_lt_30, "\n")
 cat("La Probabilidad [Z2 < 40] es:", prob_Z2_lt_40, "\n")
 cat("La Probabilidad [Z1 + Z2 < 50] es:", prob_Z1_Z2_lt_50, "\n")
 cat("La Probabilidad [Z1 < 30 ∩ Z2 < 40] es:", prob_Z1_lt_30_Z2_lt_40, "\n")
 cat("La Probabilidad [Z1 < 30 ∪ Z2 < 40] es:", prob_Z1_lt_30_union_Z2_lt_40, "\n")
+#La Probabilidad [Z1 < 30] es: 0.8758935 
+#La Probabilidad [Z2 < 40] es: 0.7602499 
+#La Probabilidad [Z1 + Z2 < 50] es: 0.8804336 
+#La Probabilidad [Z1 < 30 ∩ Z2 < 40] es: 0.7446834 
+#La Probabilidad [Z1 < 30 ∪ Z2 < 40] es: 0.89146 
 
 #################################################################
 # Ejercicio 6.
